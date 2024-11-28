@@ -1,25 +1,35 @@
+import { useState } from "react";
+
 import * as Icons from "@/assets/icons";
 
-function BookCard({ data: { image, author, language, title } }) {
+function BookCard({ data: { image, author, language, title, pages } }) {
+  const [isLike, setIsLike] = useState(false);
+
   return (
-    <div className="bg-amber-600 flex justify-between items-start p-4 rounded-lg">
-      <div className="flex">
-        <img src={image} />
+    <div className="bg-zinc-700 flex justify-between items-start p-4 rounded-lg">
+      <div className="flex gap-6">
+        <img src={image} className="w-[60px] rounded" />
 
-        <div >
-          <h3>{title}</h3>
+        <div className="flex flex-col justify-between ">
+          <h3 className="font-black text-xl">{title}</h3>
 
-          <p>{author}</p>
+          <p className="font-semibold text-base">{author}</p>
 
-          <div>
+          <div className="flex gap-4 text-sm font-medium">
             <span>{language}</span>
-            <span>{}</span>
+            <span>{pages}pages</span>
           </div>
         </div>
       </div>
 
-      <button>
-        <Icons.LikeIcon />
+      <button
+        onClick={() => setIsLike((isLike) => !isLike)}
+        className="h-fit transition-all duration-100 ease-in-out hover:scale-125"
+      >
+        <Icons.LikeIcon
+          className={isLike ? "text-red-600" : "text-white"}
+          fontSize="1.8rem"
+        />
       </button>
     </div>
   );

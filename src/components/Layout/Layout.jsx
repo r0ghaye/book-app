@@ -6,7 +6,7 @@ function Layout({ children }) {
       <header className="flex justify-between items-center bg-zinc-700 py-5 px-4 rounded-lg">
         <h1 className="text-3xl font-black">Book App</h1>
         <p>
-          <a href="https://botostart.ir/" className="text-purple-500 font-black">
+          <a href="https://botostart.ir/" className="text-indigo-500 font-black">
             Botostart
           </a>{" "}
           | React.js Full Course

@@ -40,7 +40,7 @@ function Books() {
         setSearch={setSearch}
         searchHandler={searchHandler}
       />
-      <div className="grid grid-cols-4 mt-12">
+      <div className="lg:grid lg:grid-cols-4 mt-12 flex flex-col-reverse gap-5">
         <div
           className={twMerge(
             " grid gap-3",
@@ -57,7 +57,7 @@ function Books() {
         </div>
         <div>
           {!!liked.length && (
-            <div className="col-span-1 bg-indigo-500 grid gap-2 p-3 ml-5 rounded-lg">
+            <div className="col-span-1 bg-indigo-500 grid gap-2 p-3 lg:ml-5 rounded-lg">
               <h3 className="text-xl py-1">Favorites</h3>
               {liked.map((book) => (
                 <SideCard key={book.id} data={book} />
